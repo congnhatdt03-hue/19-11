@@ -235,16 +235,17 @@
         }
 
         /* PAGE 4 - KHUNG TRẮNG + CHỮ ĐẸP */
-        .magic-envelope {
-            width: 85vw;
-            max-width: 380px;
-            height: 300px;
-            position: relative;
-            margin: 40px auto;
-            cursor: pointer;
+        .letter-content {
+            padding: 30px 25px;       /* Khoảng cách viền đẹp hơn */
+            height: auto !important;  /* Bắt buộc tự động cao theo chữ */
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease;
 }
-        }
-
         .envelope-body {
             position: absolute;
             top: 0;
@@ -492,12 +493,8 @@
         let noClickCount = 0;
         let typingIndex = 0;
         let currentPage = 1;
-
-       const messages = `💖 Chúc mừng ngày 19-11 của anh yêu nha ❤️
-Cảm ơn vì anh luôn mạnh mẽ, ấm áp và là chỗ dựa lớn nhất của em.
-Hôm nay và mọi ngày sau nữa, em chỉ mong anh luôn cười thật tươi và hạnh phúc thật nhiều nhé!
-Em yêu anh nhất trên đời luôn áaa~ 💕🐻`;
-
+       const messages = `Chúc mừng ngày 19-11 của anh yêu nha ❤️\n\nCảm ơn vì anh luôn mạnh mẽ, ấm áp và là chỗ dựa lớn nhất của em.\n\nHôm nay và mọi ngày sau nữa, em chỉ mong anh luôn cười thật tươi và hạnh phúc thật nhiều nhé!\n\nEm yêu anh nhất trên đời luôn áaa~ 💕🐻`;
+        
         const pages = document.querySelectorAll('.page');
         const passwordInput = document.getElementById('password');
         const errorMsg = document.getElementById('error');
