@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Món Quà 19-11 Từ Em ❤️</title>
+    <title>Món Quà Đặc Biệt 19-11 ❤️</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -15,117 +14,87 @@
             position: relative;
         }
         body::before {
-            content: '';
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
+            content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            pointer-events: none;
-            z-index: 1;
+            pointer-events: none; z-index: 1;
         }
-        .container {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: clamp(20px, 5vw, 40px);
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
+        .container { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: clamp(20px, 5vw, 40px); text-align: center; position: relative; z-index: 2; }
         .page { display: none; animation: fadeIn 0.8s ease-out; width: 100%; }
         .page.active { display: flex; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        h1 {
-            font-size: clamp(1.8rem, 5vw, 2.8rem);
-            color: #d63384;
-            margin-bottom: clamp(20px, 8vw, 40px);
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+        h1 { font-size: clamp(1.8rem, 5.5vw, 2.8rem); color: #d63384; margin-bottom: 30px; text-shadow: 0 2px 4px rgba(0,0,0,0.1); }
 
-        /* === PAGE 1 === */
-        .input-group { display: flex; flex-direction: column; gap: 15px; max-width: 320px; width: 100%; }
-        input {
-            padding: 16px;
-            border: 3px solid #ff69b4;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            text-align: center;
-            background: rgba(255,255,255,0.95);
-        }
+        .input-group { gap: 18px; max-width: 340px; width: 100%; }
+        input { padding: 18px; border: 3px solid #ff69b4; border-radius: 30px; font-size: 1.2rem; background: rgba(255,255,255,0.95); }
         input:focus { outline: none; border-color: #d63384; transform: scale(1.03); }
+        button { padding: 16px 40px; border-radius: 30px; background: linear-gradient(45deg, #ff69b4, #d63384); color: white; font-weight: bold; cursor: pointer; }
+        button:hover { transform: scale(1.05); box-shadow: 0 8px 20px rgba(214,51,132,0.4); }
 
-        /* === PAGE 2 === */
-        .envelope-img { width: clamp(160px, 35vw, 220px); filter: drop-shadow(0 10px 20px rgba(0,0,0,0.25)); }
+        .envelope-img { width: clamp(160px, 35vw, 220px); filter: drop-shadow(0 12px 20px rgba(0,0,0,0.25)); }
         .box { font-size: clamp(5rem, 22vw, 9rem); animation: bounce 2s infinite; }
-        @keyframes bounce { 0%,100% { transform: translateY(0); 50% { transform: translateY(-15px); } }
+        @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-18px); } }
 
-        /* === PAGE 4 - KHUNG THƯ HOÀN HẢO === */
+        /* === KHUNG THƯ TỰ ĐỘNG VỪA KHÍT 100% === */
         .magic-envelope {
             width: 90vw;
-            max-width: 430px;
-            height: auto !important;           /* Tự động giãn */
-            min-height: 280px;
+            max-width: 440px;
+            height: auto !important;
+            min-height: 300px;
             position: relative;
             margin: 40px auto;
-            cursor: pointer;
         }
         .envelope-body {
             width: 100%;
             height: 100%;
             background: white;
-            border: 4px solid #ff69b4;
-            border-radius: 20px;
+            border: 5px solid #ff69b4;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 15px 35px rgba(214, 51, 132, 0.3);
+            box-shadow: 0 20px 40px rgba(214,51,132,0.35);
         }
         .letter-content {
-            padding: 40px 30px;
+            padding: 45px 35px;
             width: 100%;
             height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
             opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.9s ease;
+            transform: translateY(25px);
+            transition: all 1s ease;
         }
-        .magic-envelope.open .letter-content {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .magic-envelope.open .letter-content { opacity: 1; transform: translateY(0); }
+
         .typing-text {
-            font-size: clamp(1.3rem, 4.5vw, 1.7rem) !important;
-            line-height: 2;
+            font-size: clamp(1.35rem, 4.8vw, 1.8rem) !important;
+            line-height: 2.1;
             color: #d63384;
             text-align: center;
-            white-space: pre-line;   /* Quan trọng: nhận \n thành xuống dòng */
-            word-break: keep-all;
+            white-space: pre-line; /* Quan trọng nhất để \n xuống dòng */
+            word-wrap: break-word;
         }
-        .cursor { display: inline-block; background: #d63384; width: 3px; animation: blink 1s infinite; }
+        .cursor { display: inline-block; background: #d63384; width: 3px; height: 1.4em; margin-left: 2px; animation: blink 1s infinite; vertical-align: middle; }
         @keyframes blink { 0%,50% { opacity: 1; } 51%,100% { opacity: 0; } }
 
-        /* Gấu và nút */
-        .bears-container { gap: 40px; margin: 40px auto 20px; }
-        .bear { font-size: clamp(50px, 12vw, 70px); animation: bearBounce 2.5s infinite; }
-        @keyframes bearBounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+        .bears-container { gap: 50px; margin: 50px auto 30px; }
+        .bear { font-size: clamp(60px, 14vw, 80px); animation: bearBounce 2.3s infinite; cursor: pointer; }
+        @keyframes bearBounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+
         .restart {
-            padding: 14px 40px;
-            font-size: 1.1rem;
+            padding: 16px 50px;
+            font-size: 1.2rem;
             background: linear-gradient(45deg, #ff9a9e, #fecfef);
-            border: 3px solid #d63384;
+            border: 4px solid #d63384;
             border-radius: 50px;
             color: #d63384;
             font-weight: bold;
         }
 
-        /* Các hiệu ứng khác giữ nguyên */
         .close-btn {
             position: fixed !important; top: 15px !important; right: 15px !important;
-            width: 44px; height: 44px; border-radius: 50%; background: #ff69b4 !important;
-            color: white !important; border: 3px solid white !important; font-size: 20px;
-            z-index: 9999;
+            width: 48px; height: 48px; background: #ff69b4 !important; color: white !important;
+            border: 3px solid white !important; border-radius: 50%; font-size: 22px; z-index: 9999;
         }
     </style>
 </head>
@@ -139,23 +108,47 @@
     <!-- PAGE 1 -->
     <div id="page1" class="page active">
         <div class="container">
-            <h1>Có món quà đặc biệt dành riêng cho anh nè ❤️</h1>
+            <h1>Có món quà đặc biệt dành cho anh nè ❤️</h1>
             <div class="input-group">
                 <input type="password" id="password" placeholder="Nhập mật khẩu của em đi anh ơi 💕" maxlength="10">
                 <button onclick="checkPassword()">Mở quà nào ✨</button>
             </div>
-            <p id="error" class="error hidden"> Sai mật khẩu rồi, thử lại nha anh yêu 😘</p>
+            <p id="error" class="error hidden">Sai mật khẩu rồi đó anh ơi, thử lại nha 😘</p>
         </div>
     </div>
 
-    <!-- PAGE 2, 3 giữ nguyên (bạn đã có rồi, mình không viết lại cho gọn) -->
-    <!-- ... (giữ nguyên phần page2, page3, page4 HTML như cũ của bạn) ... -->
+    <!-- PAGE 2 -->
+    <div id="page2" class="page">
+        <button class="close-btn" onclick="goBack()">✕</button>
+        <div class="container">
+            <h1>Chúc mừng ngày 19-11 của anh yêu! ❤️</h1>
+            <div class="envelope-float">
+                <img src="1234.png" alt="Phong bì" class="envelope-img">
+            </div>
+            <div class="gift-box" onclick="openGift()">
+                <div class="box">🎁</div>
+                <p>Nhấn vào hộp quà để mở nha anh!!</p>
+            </div>
+        </div>
+    </div>
 
-    <!-- PAGE 4 - THIỆP CHÍNH -->
+    <!-- PAGE 3 -->
+    <div id="page3" class="page">
+        <button class="close-btn" onclick="goBack()">✕</button>
+        <div class="container">
+            <div class="envelope"><div class="card">💖 Đôi lời từ em 💖</div></div>
+            <div class="choices">
+                <button class="btn-yes" onclick="openLetter()">Có, mở luôn đi ❤️</button>
+                <button class="btn-no" onclick="refuseLetter()">Không, ngại quá 😳</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAGE 4 - THƯ TÌNH -->
     <div id="page4" class="page">
         <button class="close-btn" onclick="goBack()">✕</button>
         <div class="container">
-            <div class="magic-envelope envelope" id="magicEnvelope">
+            <div class="magic-envelope" id="magicEnvelope">
                 <div class="envelope-body">
                     <div class="letter-content" id="letterContent">
                         <p class="typing-text" id="typingText"></p>
@@ -184,24 +177,65 @@ Hôm nay và mọi ngày sau nữa, em chỉ mong anh luôn cười thật tươ
 
 Em yêu anh nhất trên đời luôn áaa~ 💕🐻`;
 
-        // Toàn bộ script giữ nguyên như cũ của bạn, chỉ thêm 1 dòng nhỏ để nhạc chắc chắn chạy trên mobile
-        function playMusic() {
-            const music = document.getElementById('bgMusic');
-            music.volume = 0.35;
-            music.play().catch(() => {
-                // Nếu bị chặn autoplay, bật khi người dùng tương tác lần đầu (nhập mật khẩu)
-                document.body.addEventListener('touchstart', () => music.play(), { once: true });
-            });
+        function showPage(id) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
         }
 
-        // Giữ nguyên tất cả hàm còn lại: checkPassword, openGift, refuseLetter, openLetter, startTyping, typeWriter, v.v...
-        // (copy nguyên phần <script> cũ của bạn vào đây, chỉ thay phần messages và playMusic như trên)
+        function checkPassword() {
+            if (document.getElementById('password').value === CORRECT_PASSWORD) {
+                showPage('page2');
+                document.getElementById('bgMusic').play();
+            } else {
+                document.getElementById('error').classList.remove('hidden');
+                setTimeout(() => document.getElementById('error').classList.add('hidden'), 3000);
+            }
+        }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            playMusic();
-            createFloatingHearts();
-            document.getElementById('password')?.focus();
-        });
+        function openGift() { showPage('page3'); }
+        function refuseLetter() {
+            noClickCount++;
+            document.querySelector('.btn-no').style.transform = `scale(${Math.max(0.4, 1 - noClickCount*0.09)})`;
+            if (noClickCount >= 7) openLetter();
+        }
+        function openLetter() {
+            showPage('page4');
+            setTimeout(() => document.getElementById('magicEnvelope').classList.add('open'), 600);
+            setTimeout(startTyping, 1800);
+        }
+        function restart() { location.reload(); }
+
+        function startTyping() {
+            let i = 0;
+            const txt = messages;
+            const el = document.getElementById('typingText');
+            const timer = setInterval(() => {
+                el.innerHTML = txt.substring(0, i) + '<span class="cursor">|</span>';
+                if (++i > txt.length) {
+                    clearInterval(timer);
+                    el.innerHTML = txt.replace(/\n/g, '<br>');
+                    createFlowerParticles();
+                }
+            }, 80);
+        }
+
+        function createFlowerParticles() {
+            for (let i = 0; i < 25; i++) {
+                setTimeout(() => {
+                    const p = document.createElement('div');
+                    p.className = 'particle';
+                    p.innerHTML = ['🌸','🌺','💕','🌷','❤️'][Math.floor(Math.random()*5)];
+                    p.style.left = Math.random()*100 + 'vw';
+                    p.style.animationDuration = (6 + Math.random()*8) + 's';
+                    document.body.appendChild(p);
+                    setTimeout(() => p.remove(), 16000);
+                }, i*250);
+            }
+        }
+
+        // Bật nhạc khi người dùng tương tác lần đầu (bắt buộc trên mobile)
+        document.body.addEventListener('touchstart', () => document.getElementById('bgMusic').play(), { once: true });
+        document.getElementById('password').addEventListener('keypress', e => e.key === 'Enter' && checkPassword());
     </script>
 </body>
 </html>
